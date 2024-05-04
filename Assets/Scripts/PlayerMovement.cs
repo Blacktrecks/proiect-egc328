@@ -1,18 +1,32 @@
+using System;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private Transform _playerTransform;
+    [SerializeField] private Rigidbody _playerRb;
     [SerializeField] private float _moveSpeed = 1f;
+
+    public bool IsCutting = false;
+    public event Action PlayerMovedAwayFromCuttingBoard;
 
     private Vector3 _moveDirection = Vector3.zero;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if(_moveDirection != Vector3.zero)
+        if (_moveDirection != Vector3.zero)
         {
-            _playerTransform.Translate(_moveDirection * Time.deltaTime * _moveSpeed);
+            Vector3 lookDirection = new Vector3(_moveDirection.z, _moveDirection.y, -_moveDirection.x);
+            _playerRb.MoveRotation(Quaternion.LookRotation(lookDirection));
+
+            _playerRb.MovePosition(_playerRb.position + _moveSpeed * Time.fixedDeltaTime * _moveDirection);
+
+            if (IsCutting)
+            {
+                IsCutting = false;
+                PlayerMovedAwayFromCuttingBoard?.Invoke();
+            }
         }
     }
 
