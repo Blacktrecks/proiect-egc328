@@ -2,7 +2,7 @@
     "name": "PlayerInput",
     "maps": [
         {
-            "name": "Walking",
+            "name": "Main Action Map",
             "id": "fe83d1e9-956c-4f61-b027-105575074e47",
             "actions": [
                 {
@@ -36,6 +36,24 @@
                     "name": "RIGHT",
                     "type": "Button",
                     "id": "219cfced-d84c-4f32-9a0b-533f95e598af",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pickup Object",
+                    "type": "Button",
+                    "id": "001058af-d985-4a99-a7df-a49eba21d0c3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Use Object",
+                    "type": "Button",
+                    "id": "be4ae28d-e89c-4c06-be8a-131c806bb55d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -128,6 +146,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "RIGHT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bb0a99af-201b-45ad-84f6-e79f555df8f9",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pickup Object",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "55560541-a42f-41a0-a448-b0bc8c9a46db",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use Object",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
