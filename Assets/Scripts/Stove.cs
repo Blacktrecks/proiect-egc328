@@ -64,7 +64,7 @@ public class Stove : MonoBehaviour
     }
     public void RemoveAllItems()
     {
-        _itemInsideTool.Clear();
+        _itemInsideTool = new();
         _cookingProgress = 0f;
 
         for (int i = 0; i < _itemsInsidePot.childCount; i++)

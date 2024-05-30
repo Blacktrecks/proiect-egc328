@@ -19,7 +19,6 @@ public class PickupableObject : MonoBehaviour
     public bool IsCuttable => _isCuttable;
     public GameObject PfImageInsidePot => _pfImageInsidePot;
     public bool IsPottable => _isPottable;
-    public GameObject ItemWhenOnTray => _itemOnTray;
 
     private void Awake()
     {

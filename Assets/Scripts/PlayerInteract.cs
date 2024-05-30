@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,6 +21,20 @@ public class PlayerInteract : MonoBehaviour
         // drop currently held object
         if (_objectHeld != null)
         {
+            if (_objectHeld.TryGetComponent<FoodTray>(out var foodTrayHeld) && foodTrayHeld.Ingredients.Count > 0)
+            {
+                List<ServingArea> servingAreas = _pickupCollider.ServingAreas;
+
+                if (servingAreas.Count > 0)
+                {
+                    var servingArea = servingAreas[0];
+                    GameplayManager.Instance.OnRecipeDelivered(foodTrayHeld.Ingredients.Select(el => el.FoodType).ToList());
+                    foodTrayHeld.RemoveFood();
+                    _objectHeld = null;
+                    return;
+                }
+            }
+
             #region Cutting Board Placing
             List<CuttingBoard> cuttingBoards = _pickupCollider.CuttingBoards;
 
@@ -57,7 +72,7 @@ public class PlayerInteract : MonoBehaviour
                         if (stove.IngredientsInside.Count > 0 && stove.GetCookingProgress() >= 1.0)
                         {
                             FoodTray foodTray = _objectHeld.GetComponent<FoodTray>();
-                            foodTray.PutFoodOnit(stove.IngredientsInside[0].ItemWhenOnTray, stove.IngredientsInside);
+                            foodTray.PutFoodOnit(stove.IngredientsInside);
                             stove.RemoveAllItems();
                             return;
                         }
