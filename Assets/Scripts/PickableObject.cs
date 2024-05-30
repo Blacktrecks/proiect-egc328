@@ -5,13 +5,21 @@ using UnityEngine;
 public class PickupableObject : MonoBehaviour
 {
     [SerializeField] private PickupableObject _pfObjectAfterCutting;
-    [SerializeField] private FoodType _foodType;
+    [SerializeField] private ObjectType _foodType;
+    [SerializeField] private bool _isCuttable = true;
+    [SerializeField] private GameObject _pfImageInsidePot;
+    [SerializeField] private bool _isPottable;
+    [SerializeField] private GameObject _itemOnTray;
 
     private Collider _collider;
     private Rigidbody _rb;
 
     public PickupableObject CuttedVariant => _pfObjectAfterCutting;
-    public FoodType FoodType => _foodType;
+    public ObjectType FoodType => _foodType;
+    public bool IsCuttable => _isCuttable;
+    public GameObject PfImageInsidePot => _pfImageInsidePot;
+    public bool IsPottable => _isPottable;
+    public GameObject ItemWhenOnTray => _itemOnTray;
 
     private void Awake()
     {
@@ -24,6 +32,7 @@ public class PickupableObject : MonoBehaviour
         _collider.enabled = false;
         _rb.constraints = RigidbodyConstraints.FreezeAll;
     }
+
 
     public void EnableCollider()
     {

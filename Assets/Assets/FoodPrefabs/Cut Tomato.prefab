@@ -18,19 +18,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77b479c36d0ebf14fbf58a9a6840013a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 60
+      value: 19.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77b479c36d0ebf14fbf58a9a6840013a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.2248678
+      value: -1.6664739
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77b479c36d0ebf14fbf58a9a6840013a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00000023841858
+      value: 0.551
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77b479c36d0ebf14fbf58a9a6840013a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3152444
+      value: 3.5411074
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77b479c36d0ebf14fbf58a9a6840013a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -78,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 074c0f9e31f04344f9523420cee44072, type: 2}
     - target: {fileID: 919132149155446097, guid: 77b479c36d0ebf14fbf58a9a6840013a, type: 3}
       propertyPath: m_Name
-      value: Tomato
+      value: Cut Tomato
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -89,10 +89,10 @@ PrefabInstance:
       addedObject: {fileID: 5758811307002408196}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 77b479c36d0ebf14fbf58a9a6840013a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -9028291504720810301}
+      addedObject: {fileID: -7357535187657779149}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 77b479c36d0ebf14fbf58a9a6840013a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -7357535187657779149}
+      addedObject: {fileID: 8726160683275010482}
   m_SourcePrefab: {fileID: 100100000, guid: 77b479c36d0ebf14fbf58a9a6840013a, type: 3}
 --- !u!1 &8462816447842546049 stripped
 GameObject:
@@ -111,32 +111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa467212b17137b4ebe4f5285bd29c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pfObjectAfterCutting: {fileID: 5758811307002408196, guid: 0ce36d0870fb9364e96c4455d87b5308, type: 3}
-  _foodType: 0
-  _isCuttable: 1
-  _pfImageInsidePot: {fileID: 0}
-  _isPottable: 0
---- !u!135 &-9028291504720810301
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8462816447842546049}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.003762404
-  m_Center: {x: 0.000000042025935, y: 0.000000019441357, z: 0.00088940875}
+  _pfObjectAfterCutting: {fileID: 0}
+  _foodType: 1
+  _isCuttable: 0
+  _pfImageInsidePot: {fileID: 1140238195548584687, guid: 6584f7ddd954f7042bfc802dbf2408c1, type: 3}
+  _isPottable: 1
+  _itemOnTray: {fileID: 199501694862163062, guid: 0a400a2c7a7d42b4d96f0ed62926730f, type: 3}
 --- !u!54 &-7357535187657779149
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -164,3 +144,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &8726160683275010482
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8462816447842546049}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.007524807, y: 0.007524805, z: 0.006263784}
+  m_Center: {x: 0.00000004202593, y: 0.000000019441357, z: 0.00088940875}

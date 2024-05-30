@@ -20,12 +20,13 @@ public class PlayerInteract : MonoBehaviour
         // drop currently held object
         if (_objectHeld != null)
         {
-            List<CuttingBoard> cuttingBoards = _pickupCollider.CuttingBoardsInside;
+            #region Cutting Board Placing
+            List<CuttingBoard> cuttingBoards = _pickupCollider.CuttingBoards;
 
             if (cuttingBoards.Count > 0)
             {
                 CuttingBoard boardToPlace = null;
-                foreach(CuttingBoard board in cuttingBoards)
+                foreach (CuttingBoard board in cuttingBoards)
                 {
                     if (board.ObjectOnIt == null)
                     {
@@ -42,14 +43,47 @@ public class PlayerInteract : MonoBehaviour
                     return;
                 }
             }
+            #endregion
 
+            #region Stove Placing
+            List<Stove> stovesAroundForPlacing = _pickupCollider.Stoves;
+
+            if (stovesAroundForPlacing.Count > 0)
+            {
+                foreach (Stove stove in stovesAroundForPlacing)
+                {
+                    if (_objectHeld.FoodType == Assets.Scripts.ObjectType.FoodTray)
+                    {
+                        if (stove.IngredientsInside.Count > 0 && stove.GetCookingProgress() >= 1.0)
+                        {
+                            FoodTray foodTray = _objectHeld.GetComponent<FoodTray>();
+                            foodTray.PutFoodOnit(stove.IngredientsInside[0].ItemWhenOnTray, stove.IngredientsInside);
+                            stove.RemoveAllItems();
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        bool wasPlaced = stove.TryPlaceItemOn(_objectHeld);
+
+                        if (wasPlaced)
+                        {
+                            _pickupCollider.GameObjectsInside.Remove(_objectHeld);
+                            _objectHeld = null;
+                            return;
+                        }
+                    }
+                }
+            }
+
+            #endregion
             _objectHeld.transform.SetParent(null);
             _objectHeld.EnableCollider();
             _objectHeld = null;
             return;
         }
 
-        List<CuttingBoard> cuttingBoardsToTakeFrom = _pickupCollider.CuttingBoardsInside;
+        List<CuttingBoard> cuttingBoardsToTakeFrom = _pickupCollider.CuttingBoards;
         foreach (CuttingBoard board in cuttingBoardsToTakeFrom)
         {
             if (board.ObjectOnIt != null)
@@ -59,9 +93,22 @@ public class PlayerInteract : MonoBehaviour
             }
         }
 
+        List<Stove> stovesAround = _pickupCollider.Stoves;
+        if (stovesAround.Count > 0)
+        {
+            foreach (Stove stove in stovesAround)
+            {
+                if (stove.ToolOnIt != null)
+                {
+                    PutPickupableObjectInHands(stove.RemoveObjectFromIt());
+                    return;
+                }
+            }
+        }
+
         List<PickupableObject> possibleObjs = _pickupCollider.GameObjectsInside;
-        
-        if (possibleObjs.Count > 0 )
+
+        if (possibleObjs.Count > 0)
         {
             PickupableObject obj = possibleObjs[0];
 
@@ -92,10 +139,10 @@ public class PlayerInteract : MonoBehaviour
     {
         if (context.phase != InputActionPhase.Canceled) return;
 
-        List<CuttingBoard> cuttingBoardsToTakeFrom = _pickupCollider.CuttingBoardsInside;
+        List<CuttingBoard> cuttingBoardsToTakeFrom = _pickupCollider.CuttingBoards;
         foreach (CuttingBoard board in cuttingBoardsToTakeFrom)
         {
-            if (board.ObjectOnIt != null)
+            if (board.ObjectOnIt != null && board.ObjectOnIt.IsCuttable)
             {
                 board.StartCutting(this);
 
