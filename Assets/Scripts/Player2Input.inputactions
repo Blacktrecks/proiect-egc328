@@ -1,5 +1,5 @@
 {
-    "name": "PlayerInput",
+    "name": "Player2Input",
     "maps": [
         {
             "name": "Main Action Map",
@@ -63,8 +63,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "694ac78d-1daf-4ecc-9ba1-6d7e2a015a26",
-                    "path": "<Keyboard>/w",
+                    "id": "7bfe3e1f-4810-4344-b9c1-6b98f5f9f854",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
@@ -74,8 +74,8 @@
                 },
                 {
                     "name": "",
-                    "id": "d935edb2-21b0-4a09-8dcf-36899ca860b8",
-                    "path": "<Keyboard>/s",
+                    "id": "af2dcfe1-9b83-4594-819f-cfad97cd7f57",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
@@ -85,8 +85,8 @@
                 },
                 {
                     "name": "",
-                    "id": "87f8570d-8e5b-437f-ac7a-0adb59a71e00",
-                    "path": "<Keyboard>/a",
+                    "id": "78082ad2-36df-4a51-be0f-bf51aad31da7",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
@@ -96,8 +96,8 @@
                 },
                 {
                     "name": "",
-                    "id": "ebee0498-4cf1-4acd-885b-9be78f85d3dd",
-                    "path": "<Keyboard>/d",
+                    "id": "ed233331-2f9b-4104-9842-4d811fabc310",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
@@ -108,7 +108,7 @@
                 {
                     "name": "",
                     "id": "bb0a99af-201b-45ad-84f6-e79f555df8f9",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/rightShift",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
@@ -119,7 +119,7 @@
                 {
                     "name": "",
                     "id": "55560541-a42f-41a0-a448-b0bc8c9a46db",
-                    "path": "<Keyboard>/leftShift",
+                    "path": "<Keyboard>/rightCtrl",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",

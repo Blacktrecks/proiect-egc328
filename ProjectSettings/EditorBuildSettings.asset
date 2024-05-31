@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ValentinTestingScene.unity
     guid: 025871b05f7bb4f4cae42f0f168eee6b
+  - enabled: 1
+    path: Assets/Scenes/Cantina USV.unity
+    guid: 672202c1c76820f429ca4a6a4492d084
+  - enabled: 1
+    path: Assets/Scenes/Bucatarie Camin.unity
+    guid: afa00c811a0596c4c8c0670805941f7e
+  - enabled: 1
+    path: Assets/Scenes/Outside USV.unity
+    guid: 3a39181a5a1c1df4e841d6374846a755
+  - enabled: 1
+    path: Assets/Scenes/Bonus Level.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

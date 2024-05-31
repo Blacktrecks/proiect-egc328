@@ -34,6 +34,9 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _scoreText;
     [SerializeField] private Button _doneButton;
 
+    [SerializeField] private GameObject _player1;
+    [SerializeField] private GameObject _player2;
+
     private List<PreparedFoodSO> _currentRecipes;
     private List<FoodRecipeContainer> _foodRecipeContainers;
 
@@ -42,6 +45,7 @@ public class GameplayManager : MonoBehaviour
     private int _moneyEarned = 0;
 
     public static GameplayManager Instance { get; private set; }
+    public static int PlayerCount = 1;
 
     public List<PreparedFoodSO> CurrentlyAvailableRecipes => _levelRecipes;
 
@@ -72,6 +76,11 @@ public class GameplayManager : MonoBehaviour
         {
             PreparedFoodSO newRecipe = _levelRecipes.RandomElement();
             AddRecipe(newRecipe);
+        }
+
+        if (PlayerCount == 1)
+        {
+            Destroy(_player2);
         }
 
         StartCoroutine(LevelCountdown());

@@ -572,6 +572,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -201.6807
       objectReference: {fileID: 0}
+    - target: {fileID: 8600933223672247926, guid: a1b5318156e719741a8ee9c419b81f43, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600933223672247926, guid: a1b5318156e719741a8ee9c419b81f43, type: 3}
+      propertyPath: m_Options.m_Options.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600933223672247926, guid: a1b5318156e719741a8ee9c419b81f43, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[1].m_Text
+      value: Bucataria Camine USV
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600933223672247926, guid: a1b5318156e719741a8ee9c419b81f43, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[2].m_Text
+      value: Outside USV
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600933223672247926, guid: a1b5318156e719741a8ee9c419b81f43, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[3].m_Text
+      value: Bonus Level
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -781,6 +801,17 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!114 &1607344507 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8600933223672247926, guid: a1b5318156e719741a8ee9c419b81f43, type: 3}
+  m_PrefabInstance: {fileID: 1224986056}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1684669460 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8195356414047740335, guid: a1b5318156e719741a8ee9c419b81f43, type: 3}
@@ -832,6 +863,7 @@ MonoBehaviour:
   _playerCountSlider: {fileID: 1684669460}
   _playerCountText: {fileID: 385145936}
   _gameModeStartGameButton: {fileID: 1406093506}
+  _dropDownLevel: {fileID: 1607344507}
   _creditsReturnButton: {fileID: 640744919}
 --- !u!4 &1779537330
 Transform:
@@ -870,6 +902,10 @@ PrefabInstance:
     - target: {fileID: 905131249583246259, guid: d0327218d9b3306459f687e9c33a4620, type: 3}
       propertyPath: m_Name
       value: CanvasMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 905131249583246259, guid: d0327218d9b3306459f687e9c33a4620, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3413511364252583610, guid: d0327218d9b3306459f687e9c33a4620, type: 3}
       propertyPath: m_AnchorMax.y

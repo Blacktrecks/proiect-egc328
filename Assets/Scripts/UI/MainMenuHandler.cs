@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 using TMPro;
 
+using UnityEditor.UI;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,6 +24,7 @@ public class MainMenuHandler : MonoBehaviour
     [SerializeField] private Slider _playerCountSlider;
     [SerializeField] private TextMeshProUGUI _playerCountText;
     [SerializeField] private Button _gameModeStartGameButton;
+    [SerializeField] private TMP_Dropdown _dropDownLevel;
 
     [SerializeField] private Button _creditsReturnButton;
 
@@ -55,6 +58,7 @@ public class MainMenuHandler : MonoBehaviour
 
     private void OnSliderPlayerCountValueChanged(float newValue)
     {
+        GameplayManager.PlayerCount = (int)newValue;
         _playerCountText.text = $"Numar Jucatori: {(int)newValue}";
     }
 
@@ -65,7 +69,8 @@ public class MainMenuHandler : MonoBehaviour
 
     public void OnGameModeStartGameButtonPressed()
     {
-        SceneManager.LoadScene(1);
+        // in build settings, the levels start at index 2, the values start from 0
+        SceneManager.LoadScene(_dropDownLevel.value + 2);
     }
 
     private void OnCreditsButtonPressed()
