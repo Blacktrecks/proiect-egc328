@@ -7,8 +7,6 @@ using System.Linq;
 
 using TMPro;
 
-using UnityEditor.UI;
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -36,6 +34,8 @@ public class GameplayManager : MonoBehaviour
 
     [SerializeField] private GameObject _player1;
     [SerializeField] private GameObject _player2;
+
+    [SerializeField] private Button _leaveGameButton;
 
     private List<PreparedFoodSO> _currentRecipes;
     private List<FoodRecipeContainer> _foodRecipeContainers;
@@ -84,6 +84,8 @@ public class GameplayManager : MonoBehaviour
         }
 
         StartCoroutine(LevelCountdown());
+
+        _leaveGameButton.onClick.AddListener(() => SceneManager.LoadScene(0));
     }
 
     private void OnDoneButtonPressed()

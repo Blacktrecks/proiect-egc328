@@ -61,6 +61,9 @@ MonoBehaviour:
   _gameOverCanvas: {fileID: 9053885060409442352}
   _scoreText: {fileID: 446912058976997319}
   _doneButton: {fileID: 4087224526772693540}
+  _player1: {fileID: 0}
+  _player2: {fileID: 0}
+  _leaveGameButton: {fileID: 6305509029243615281}
 --- !u!1001 &3749497410386958182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -329,6 +332,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6305509029243615281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7172350788755910487, guid: a134d59c2bc382843abf614d983efa3d, type: 3}
+  m_PrefabInstance: {fileID: 3749497410386958182}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8448848616891260827
